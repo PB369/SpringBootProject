@@ -4,6 +4,7 @@ import br.com.fiap3espf.spring_boot_project.instrutor.DadosCadastroInstrutor;
 import br.com.fiap3espf.spring_boot_project.instrutor.Instrutor;
 import br.com.fiap3espf.spring_boot_project.instrutor.InstrutorRepository;
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +20,7 @@ public class InstrutorController {
 
     @PostMapping()
     @Transactional
-    public void cadastrarInstrutor(@RequestBody DadosCadastroInstrutor dados){
+    public void cadastrarInstrutor(@RequestBody @Valid DadosCadastroInstrutor dados){
         repository.save(new Instrutor(dados));
     }
 }

@@ -1,4 +1,4 @@
-CREATE TABLE instrutores(
+CREATE TABLE instrutores (
 
     id bigint NOT NULL AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL,
@@ -15,4 +15,4 @@ CREATE TABLE instrutores(
 
     PRIMARY KEY(id)
 
-)
+);
